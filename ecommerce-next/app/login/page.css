@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --box-shadow-color: white;
+    --profile-icon: invert(0%);
+    --input-bg: rgba(230,230,230,0.3);
+    --default-border-radius: 10px;
+    --placeholder-color: black;
+}
+  
+@media (prefers-color-scheme: dark) {
+    :root {
+        --box-shadow-color: black;
+        --profile-icon: invert(100%);
+        --input-bg: rgba(30,30,30,0.3);
+        --placeholder-color: white;
+    }
+}
+
+.input-wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--placeholder-color);
+}
+
+.form-input {
+    background-color: transparent;
+    border: transparent;
+    transition: linear .2s;
+    padding: 8px;
+    width: 90%;
+}
+
+.form-input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.form-input:focus {
+    outline-width: 0;
+}
+
+
+.form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-svg {
+    filter: var(--profile-icon);
+}
+
+.big-icon {
+    width: 100px;
+}
+
+.placeholder-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 55px;
+}
+
+.background {
+    background-size: 400% 400%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255,67,67,1) 0%, rgba(235,0,255,1) 53%, rgba(86,100,252,1) 100%);
+}
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+    height: 65%;
+    width:  25%;
+    background: var(--background-login);
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+    border-radius: var(--default-border-radius);
+    box-shadow: 0px 0px 5px 2px var(--box-shadow-color);
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    .remember-me {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+    }
+}
+
+a {
+    font-style: oblique;
+    font-size: 14px;
+}
+
+.checkbox {
+    height: 15px;
+    width:  15px;
+    margin-right: 5px;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--placeholder-color);
+}
+
+.button-wrapper {
+    width: 80%;
+
+    button {
+        color: var(--placeholder-color);
+        width: 100%;
+        padding: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: var(--default-border-radius);
+        background: linear-gradient(90deg, rgba(255,67,67,1) 0%, rgba(235,0,255,1) 53%, rgba(86,100,252,1) 100%);
+    }
+}
