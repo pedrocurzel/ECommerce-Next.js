@@ -8,6 +8,7 @@
     --input-bg: rgba(230,230,230,0.3);
     --default-border-radius: 10px;
     --placeholder-color: black;
+    --app-linear-gradient: linear-gradient(-45deg, rgb(241, 19, 19) 0%, rgb(241, 42, 225) 53%, rgb(61, 77, 247) 100%);
 }
   
 @media (prefers-color-scheme: dark) {
@@ -69,13 +70,26 @@
 }
 
 .background {
-    background-size: 400% 400%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
-    background: linear-gradient(90deg, rgba(255,67,67,1) 0%, rgba(235,0,255,1) 53%, rgba(86,100,252,1) 100%);
+    background: var(--app-linear-gradient);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .login-card {
@@ -130,6 +144,9 @@ input[type="checkbox"] {
         font-size: 18px;
         font-weight: bold;
         border-radius: var(--default-border-radius);
-        background: linear-gradient(90deg, rgba(255,67,67,1) 0%, rgba(235,0,255,1) 53%, rgba(86,100,252,1) 100%);
+
+        background: var(--app-linear-gradient);
+        background-size: 400% 400%;
+        animation: gradient 5s ease infinite;
     }
 }
