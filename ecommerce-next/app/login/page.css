@@ -8,7 +8,7 @@
     --input-bg: rgba(230,230,230,0.3);
     --default-border-radius: 10px;
     --placeholder-color: black;
-    --app-linear-gradient: linear-gradient(-45deg, rgb(241, 19, 19) 0%, rgb(241, 42, 225) 53%, rgb(61, 77, 247) 100%);
+    --app-linear-gradient: linear-gradient(85deg, rgba(94,208,219,1) 0%, rgba(64,134,236,1) 37%, rgba(192,93,234,1) 63%, rgba(199,93,234,1) 100%);
 }
   
 @media (prefers-color-scheme: dark) {
@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 30px;
     border-bottom: 1px solid var(--placeholder-color);
 }
@@ -32,7 +33,7 @@
 .form-input {
     background-color: transparent;
     border: transparent;
-    transition: linear .2s;
+    transition: linear 1.5s;
     padding: 8px;
     width: 90%;
 }
@@ -47,7 +48,7 @@
 
 
 .form {
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,8 +58,8 @@
     filter: var(--profile-icon);
 }
 
-.big-icon {
-    width: 100px;
+.icon-transition {
+    transition: linear .4s;
 }
 
 .placeholder-img {
@@ -66,7 +67,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 55px;
+    padding-top: 15px;
 }
 
 .background {
@@ -95,13 +96,25 @@
 .login-card {
     display: flex;
     flex-direction: column;
-    height: 65%;
+    height: 70%;
     width:  25%;
     background: var(--background-login);
     z-index: 1000;
     backdrop-filter: blur(2px);
     border-radius: var(--default-border-radius);
     box-shadow: 0px 0px 5px 2px var(--box-shadow-color);
+
+
+    .back-button {
+        position: absolute;
+        left: 45px;
+        top: 30px;
+        filter: var(--profile-icon);
+    }
+
+    .back-button:hover {
+        cursor: pointer;
+    }
 }
 
 .options {
@@ -148,5 +161,34 @@ input[type="checkbox"] {
         background: var(--app-linear-gradient);
         background-size: 400% 400%;
         animation: gradient 5s ease infinite;
+    }
+}
+
+
+.sign-up-div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    h4:hover {
+        cursor: pointer;
+    }
+}
+
+.loading-animation {
+    animation-name: loading;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    filter: var(--profile-icon);
+    position: absolute;
+    right: 50px;
+}
+
+@keyframes loading {
+    100% {
+        transform: rotate(360deg);
     }
 }
