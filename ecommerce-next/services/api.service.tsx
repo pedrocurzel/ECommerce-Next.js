@@ -14,7 +14,6 @@ export default class ApiService {
             "FullAddress": account.address,
         }
 
-
         var res = await fetch(this.baseApi + "/user/createAccount", {
             headers: {
                 "Content-type": "application/json"
